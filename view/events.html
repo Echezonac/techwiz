@@ -1,0 +1,66 @@
+ <!-- <header class="col-12 bg-dark p-3"></header> -->
+    
+    <div class="col-12 mx-auto" ng-controller='eventsctrl'>    
+        <div class="bgimg col-12">
+            <img src="{{img.bgimg}}" class="image-fluid col-12" alt="..." ng-model='img'>
+        </div>
+        <div class="events col-12 p-5">
+            <h1 class="mt-2" style="color: #f7ca3e; text-align: center;">Upcoming Events:</h1>
+            <p style="text-align: center;" class="my-5">So as to keep the atmosphere lively at our gym, we host a series of events every month to <ul class="m-auto" style="width: fit-content;">
+                <li>Free Tension In Members By Providing A Free Day</li>
+                <li>Introduce Our Services To New Potential Customers</li>
+                <li>Expand Other Fitness Marketing Brands</li>
+                <li>Have Fun and Let Loose</li>
+            </ul><br>
+            <span id="lasttextrow">View some of our events for the month below;</span></p>
+            <div class="card col-12" ng-repeat='event in events'>
+                <img src="{{event.image}}" class="image-fluid col-12 my-5" alt="...">
+                <p class="p-lg-5 p-2 my-5">{{event.txt}}</p>
+                <p class="p-lg-5 p-2 my-5">{{event.txt2}}</p>
+                <img src="{{event.image2}}" class="image-fluid col-12 my-5" alt="...">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- <footer></footer> -->
+
+    <style>
+        *{
+            color: whitesmoke;
+            margin: 0px;
+            padding: 0px;
+        }
+        .bgimg img{
+            position: fixed;
+            z-index: -1500;
+            height: 650px;
+        }
+        div{
+            background-color: rgba(0, 0, 0, .4);
+        }
+        .card{
+            background: none;
+            border: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #lasttextrow{
+            width: fit-content;
+            margin: auto 30%;
+        }
+        @media screen and (max-width:720px) {
+            .card{
+                grid-template-columns: 1fr;
+            }
+            #lasttextrow{
+                margin-left: 10%;
+            }
+        }
+        .events div img{
+            max-height: 500px;
+        }
+        </style>   
+        
